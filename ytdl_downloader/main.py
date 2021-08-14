@@ -21,8 +21,18 @@ def download(debug=False):
 
 
 if __name__ == "__main__":
+    from pyproject_details import PyProjectToml
+    import argparse
 
-    schedule.every(int(os.getenv("WAIT_MINUTES", 60))).minutes.do(download, debug=True)
+    toml = PyProjectToml()
+    parser = argparse.ArgumentParser(prog=toml.name, description=toml.description)
+    parser.add_argument("--quiet", action="store_false", help="Suppress program output")
+    parser.add_argument("--version", action="version", version=toml.version)
+    args = parser.parse_args()
+
+    schedule.every(int(os.getenv("WAIT_MINUTES", 60))).minutes.do(
+        download, debug=args.quiet
+    )
     while True:
         schedule.run_pending()
         time.sleep(1)
