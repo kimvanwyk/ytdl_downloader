@@ -9,6 +9,8 @@ python = "^3.8"
 youtube_dl = "^2021.1.24"
 black = "^20.8b1"
 attrs = "^20.3.0"
+python-dotenv = "^0.19.0"
+requests = "^2.26.0"
 
 [tool.poetry.dev-dependencies]
 ptpython = "^3.0.13"
