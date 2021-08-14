@@ -27,6 +27,8 @@ class Downloader:
             }
         ) as ytdl:
             for url in self.urls:
+                if self.debug:
+                    print(f"Downloading {url}")
                 self.current_url = url
                 ytdl.download([self.current_url])
         return list(set(self.successful_urls))
