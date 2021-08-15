@@ -5,7 +5,7 @@ description = "Tool to query a database for URLs to download, attempt to downloa
 authors = ["Kim van Wyk <kimv@sahomeloans.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 youtube_dl = "^2021.1.24"
 black = "^20.8b1"
 attrs = "^20.3.0"
