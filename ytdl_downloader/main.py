@@ -1,7 +1,7 @@
-from api import API
 from dotenv import load_dotenv
 import schedule
 
+from api import API
 from ytdl_downloader import Downloader
 
 import os

@@ -1,6 +1,7 @@
 import attr
 from dotenv import load_dotenv
 import requests
+from rich import print
 
 import os
 

@@ -1,4 +1,5 @@
 import attr
+from rich import print
 import youtube_dl
 
 
