@@ -7,6 +7,7 @@ import youtube_dl
 class Downloader:
     urls = attr.ib()
     debug = attr.ib(default=False)
+    outdir = attr.ib(default=".")
 
     def __attrs_post_init__(self):
         self.current_url = None
@@ -23,7 +24,7 @@ class Downloader:
             {
                 "ignoreerrors": True,
                 "continuedl": True,
-                "outtmpl": "%(title)s.%(ext)s",
+                "outtmpl": f"{self.outdir}/%(title)s.%(ext)s",
                 "progress_hooks": [self.__hook],
             }
         ) as ytdl:
