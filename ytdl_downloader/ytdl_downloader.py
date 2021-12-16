@@ -1,6 +1,6 @@
 import attr
 from rich import print
-import youtube_dl
+import yt_dlp
 
 
 @attr.s
@@ -20,7 +20,7 @@ class Downloader:
                 print(f'{self.current_url} downloaded to "{d["filename"]}"')
 
     def download(self):
-        with youtube_dl.YoutubeDL(
+        with yt_dlp.YoutubeDL(
             {
                 "ignoreerrors": True,
                 "continuedl": True,
