@@ -35,6 +35,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
+    download(debug=args.quiet, outdir=args.out_dir)
     schedule.every(int(os.getenv("WAIT_MINUTES", 60))).minutes.do(
         download, debug=args.quiet, outdir=args.out_dir
     )
